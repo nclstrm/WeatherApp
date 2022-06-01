@@ -68,7 +68,7 @@ h1 {
 }
 
 .current-weather-border {
-  width: 200px;
+  width: 205px;
   height: 282px;
   margin-top: 15px;
   border-right: 1.5px solid black;
@@ -76,8 +76,8 @@ h1 {
 
 .h2-vertical {
   font-size: 29px;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 10px;
+  margin-bottom: 10px;
   writing-mode: vertical-rl;
   text-orientation: upright;
   text-transform: uppercase;
@@ -85,9 +85,9 @@ h1 {
 
 .current-weather-border img {
   position: sticky;
-  width: 95px;
-  margin-left: 60px;
-  margin-top: -390px;
+  width: 100px;
+  margin-left: 70px;
+  margin-top: -380px;
 }
 
 .current-weather-discription {
@@ -156,7 +156,7 @@ ul {
 }
 
 .row.weather {
-  height: 245px;
+  height: 250px;
   border-bottom: 1.5px solid black;
 }
 
