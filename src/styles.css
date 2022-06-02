@@ -126,6 +126,11 @@ h1 {
   color: black;
 }
 
+.temp-units .active {
+  color: black;
+  text-align: none;
+}
+
 ul {
   list-style: none;
   font-size: 18px;
