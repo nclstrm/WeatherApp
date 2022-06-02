@@ -80,6 +80,16 @@ function showTemperature(response) {
   );
   document.querySelector("#current-weather-discription").innerHTML =
     response.data.weather[0].main;
+
+  document
+    .querySelector("#current-icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+
+  let iconElement = document.querySelector("#current-icon");
+  iconElement.setAttribute("alt", response.data.weather[0].main);
 }
 
 // Current Location GPS Button
