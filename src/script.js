@@ -17,14 +17,14 @@ function formatDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
 
   // Show Week days
   let day = days[now.getDay()];
   let h2 = document.querySelector("#week-day");
   if (day.length >= 7) {
-    h2.style.fontSize = "21px";
+    h2.style.fontSize = "22.5px";
   }
   h2.innerHTML = `${day}`;
   return `${hours}:${minutes}`;
