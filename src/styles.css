@@ -206,4 +206,6 @@ footer a:hover {
 
 .img-button {
   width: 48px;
+  border: none;
+  background: none;
 }
