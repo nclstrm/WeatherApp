@@ -138,26 +138,34 @@ ul {
   line-height: 1.98em;
 }
 
-.temperature ul {
+.days ul {
+  font-weight: 500;
+  position: absolute;
+  margin-left: 10px;
   padding-left: 10px;
 }
 
-.weather-text ul {
-  padding-left: 0;
+.temp-forecast ul {
+  margin-left: 50px;
 }
 
-.days ul {
-  position: absolute;
-  margin-left: 10px;
-  padding-left: 0;
+.temp-forecast-min ul {
+  color: darkgrey;
+  margin-left: 50px;
 }
 
 .icons ul {
   padding-left: 10px;
+  margin-left: 100px;
 }
 
 .icons ul img {
   width: 27px;
+}
+
+.weather-text ul {
+  padding-left: 0;
+  margin-left: 120px;
 }
 
 .col-4 {
