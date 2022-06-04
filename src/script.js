@@ -49,6 +49,32 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast-container");
+
+  let forecastHTML = `<div class="weather-forecast" id="forecast">`;
+  let forecastDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI"];
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="row forecast-row">
+        <div class=" weather-forcast-days">${day}</div>
+              <div class="temp-max">12°</div>
+              <div class="temp-min">9°</div>
+              <div class="icon">
+                <img
+                src="images/heavy-rain-1.svg"
+                alt="heavy rain"
+                class="heavy-rain"/>
+              </div>
+              <div class="forecast-description">RAINY</div>
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Show City Temperature
 function showTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -114,3 +140,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 searchCity("Basel");
+displayForecast();

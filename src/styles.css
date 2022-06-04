@@ -131,41 +131,44 @@ h1 {
   text-align: none;
 }
 
-ul {
-  list-style: none;
-  font-size: 18px;
-  padding-top: 15px;
-  line-height: 1.98em;
-}
-
-.days ul {
-  font-weight: 500;
-  position: absolute;
+.weather-forecast {
+  font-size: 20px;
+  margin-top: 23px;
   margin-left: 10px;
-  padding-left: 10px;
 }
 
-.temp-forecast ul {
-  margin-left: 50px;
+.forecast-row {
+  margin-top: 5.9px;
 }
 
-.temp-forecast-min ul {
-  color: darkgrey;
-  margin-left: 50px;
+.weather-forecast-days {
+  position: absolute;
+  font-weight: 500;
 }
 
-.icons ul {
-  padding-left: 10px;
+.temp-max {
+  position: absolute;
   margin-left: 100px;
 }
 
-.icons ul img {
-  width: 27px;
+.temp-min {
+  position: absolute;
+  color: darkgrey;
+  margin-left: 140px;
 }
 
-.weather-text ul {
-  padding-left: 0;
-  margin-left: 120px;
+.icon {
+  position: absolute;
+  margin-left: 230px;
+}
+
+.icon img {
+  width: 30px;
+}
+
+.forecast-description {
+  position: absolute;
+  margin-left: 320px;
 }
 
 .col-4 {
@@ -179,16 +182,17 @@ ul {
 }
 
 .currentDate {
+  position: absolute;
   font-weight: 600;
   font-size: 40px;
-  margin-top: -40px;
+  margin-top: 250px;
   margin-left: 30px;
-  line-height: 50px;
 }
 
 .wind-humidity-precipitation {
+  position: absolute;
   margin-left: 195px;
-  margin-top: 10px;
+  margin-top: 265px;
 }
 
 .precipitation {
