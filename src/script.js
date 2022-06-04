@@ -24,7 +24,7 @@ function formatDate(date) {
   let day = days[now.getDay()];
   let h2 = document.querySelector("#week-day");
   if (day.length >= 7) {
-    h2.style.fontSize = "22.5px";
+    h2.style.fontSize = "24px";
   }
   h2.innerHTML = `${day}`;
   return `${hours}:${minutes}`;

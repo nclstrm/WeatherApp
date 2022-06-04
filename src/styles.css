@@ -86,9 +86,9 @@ h1 {
 
 .current-weather-border img {
   position: absolute;
-  width: 100px;
-  margin-left: 60px;
-  margin-top: 5px;
+  width: 160px;
+  margin-left: 35px;
+  margin-top: -25px;
 }
 
 .current-weather-discription {
@@ -182,7 +182,7 @@ h1 {
 }
 
 .row.weather {
-  height: 250px;
+  height: 254px;
   border-bottom: 1.5px solid black;
 }
 
