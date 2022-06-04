@@ -180,16 +180,10 @@ h1 {
   margin-left: 30px;
 }
 
-.wind-humidity-precipitation {
+.wind-humidity {
   position: absolute;
   margin-left: 195px;
   margin-top: 265px;
-}
-
-.precipitation {
-  margin-left: 10px;
-  font-size: 20px;
-  display: inline;
 }
 
 .humidity {

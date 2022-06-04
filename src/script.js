@@ -103,6 +103,7 @@ function getForecast(coordinates) {
 
 // Show City Temperature
 function showTemperature(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   celsiusTemp = response.data.main.temp;
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
