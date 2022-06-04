@@ -132,13 +132,15 @@ h1 {
 }
 
 .weather-forecast {
-  font-size: 20px;
-  margin-top: 23px;
+  font-size: 18px;
+  margin-top: 15px;
   margin-left: 10px;
 }
 
 .forecast-row {
-  margin-top: 5.9px;
+  width: fit-content;
+  margin-top: 13px;
+  margin-bottom: auto;
 }
 
 .weather-forecast-days {
@@ -159,16 +161,19 @@ h1 {
 
 .icon {
   position: absolute;
-  margin-left: 230px;
+  z-index: 10;
+  margin-left: 220px;
+  margin-top: -13px;
 }
 
-.icon img {
-  width: 30px;
+.forecast-img {
+  width: 55px;
 }
 
 .forecast-description {
   position: absolute;
   margin-left: 320px;
+  text-transform: uppercase;
 }
 
 .col-4 {

@@ -49,26 +49,45 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
+  let forecast = response.data.daily;
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast-container");
-  console.log(response.data.daily);
+
   let forecastHTML = `<div class="weather-forecast" id="forecast">`;
-  let forecastDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI"];
-  forecastDays.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="row forecast-row">
-        <div class=" weather-forcast-days">${day}</div>
-              <div class="temp-max">12°</div>
-              <div class="temp-min">9°</div>
-              <div class="icon">
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="row forecast-row">
+        <div class=" weather-forcast-days">${formatDay(forecastDay.dt)}</div>
+              <div class="temp-max">${Math.round(forecastDay.temp.max)}°</div>
+              <div class="temp-min">${Math.round(forecastDay.temp.min)}°</div>
+              <span class="icon">
                 <img
-                src="images/heavy-rain-1.svg"
-                alt="heavy rain"
-                class="heavy-rain"/>
-              </div>
-              <div class="forecast-description">RAINY</div>
+                src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png"
+                
+                class="forecast-img"
+
+                alt="${forecastDay.weather[0].main}"
+                />
+              </span>
+              <div class="forecast-description">${
+                forecastDay.weather[0].main
+              }</div>
       </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
