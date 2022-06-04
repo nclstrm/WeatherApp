@@ -49,9 +49,9 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast-container");
-
+  console.log(response.data.daily);
   let forecastHTML = `<div class="weather-forecast" id="forecast">`;
   let forecastDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI"];
   forecastDays.forEach(function (day) {
@@ -75,6 +75,13 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "c49628baf9d6b437894e48a3b6469899";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // Show City Temperature
 function showTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -96,6 +103,8 @@ function showTemperature(response) {
 
   let iconElement = document.querySelector("#current-icon");
   iconElement.setAttribute("alt", response.data.weather[0].main);
+
+  getForecast(response.data.coord);
 }
 
 // Current Location & Button
@@ -140,4 +149,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 searchCity("Basel");
-displayForecast();
