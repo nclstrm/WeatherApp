@@ -65,7 +65,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="weather-forecast" id="forecast">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index > 0 && index < 7) {
       forecastHTML =
         forecastHTML +
         `<div class="row forecast-row">
@@ -103,7 +103,6 @@ function getForecast(coordinates) {
 
 // Show City Temperature
 function showTemperature(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   celsiusTemp = response.data.main.temp;
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
