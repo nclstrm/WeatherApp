@@ -70,12 +70,8 @@ function displayForecast(response) {
         forecastHTML +
         `<div class="row forecast-row">
         <div class=" weather-forcast-days">${formatDay(forecastDay.dt)}</div>
-              <div id="temp-max" class="temp-max">${Math.round(
-                forecastDay.temp.max
-              )}°</div>
-              <div id="temp-min" class="temp-min">${Math.round(
-                forecastDay.temp.min
-              )}°</div>
+              <div class="temp-max">${Math.round(forecastDay.temp.max)}°</div>
+              <div class="temp-min">${Math.round(forecastDay.temp.min)}°</div>
               <span class="icon">
                 <img
                 src="http://openweathermap.org/img/wn/${
@@ -143,54 +139,5 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#img-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-// Unit conversion
-
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temperature");
-  let tempMin = document.querySelector("#temp-min");
-  let tempMax = document.querySelector("#temp-max");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  let tempMinForecast = (forecastDay.temp.min * 9) / 5 + 32;
-  let tempMaxForecast = (forecastDay.temp.max * 9) / 5 + 32;
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
-  tempMin = Math.round(tempMinForecast);
-  tempMax = Math.round(tempMaxForecast);
-}
-
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let tempElement = document.querySelector("#temperature");
-  let tempMin = document.querySelector("#temp-min");
-  let tempMax = document.querySelector("#temp-max");
-  tempElement.innerHTML = Math.round(celsiusTemp);
-  tempMin = Math.round(forecastDay.temp.min);
-  tempMax = Math.round(forecastDay.temp.max);
-}
-
-let celsiusTemp = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemp);
-
-let forecastTempMaxFahrenheit = document.querySelector("#fahrenheit-link");
-forecastTempMax.addEventListener("click", showFahrenheitTemp);
-
-let forecastTempMaxCelsius = document.querySelector("#fahrenheit-link");
-forecastTempMax.addEventListener("click", showCelsiusTemp);
-
-let forecastTempMinFahrenheit = document.querySelector("#celsius-link");
-forecastTempMin.addEventListener("click", showFahrenheitTemp);
-
-let forecastTempMinCelsius = document.querySelector("#celsius-link");
-forecastTempMin.addEventListener("click", showCelsiusTemp);
 
 searchCity("Basel");
