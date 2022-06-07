@@ -69,9 +69,15 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class="row forecast-row">
-        <div class=" weather-forcast-days">${formatDay(forecastDay.dt)}</div>
-              <div class="temp-max">${Math.round(forecastDay.temp.max)}°</div>
-              <div class="temp-min">${Math.round(forecastDay.temp.min)}°</div>
+        <div class=" weather-forcast-days"><h6>${formatDay(
+          forecastDay.dt
+        )}</h6></div>
+              <div class="temp-max"><h6>${Math.round(
+                forecastDay.temp.max
+              )}°</h6></div>
+              <div class="temp-min"><h6>${Math.round(
+                forecastDay.temp.min
+              )}°</h6></div>
               <span class="icon">
                 <img
                 src="http://openweathermap.org/img/wn/${
@@ -83,9 +89,9 @@ function displayForecast(response) {
                 alt="${forecastDay.weather[0].main}"
                 />
               </span>
-              <div class="forecast-description">${
+              <div class="forecast-description"><h6>${
                 forecastDay.weather[0].main
-              }</div>
+              }</h6></div>
       </div>`;
     }
   });

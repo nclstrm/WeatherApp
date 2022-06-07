@@ -57,7 +57,7 @@
             class="search-city"
             placeholder="SEARCH CITY"
           />
-          <button type="submit" class="search-button" value="search">
+          <button type="submit" class="search-button" aria-label="search">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
@@ -71,7 +71,7 @@
                 class="current-weather-discription"
                 id="current-weather-discription"
               ></span>
-              <span class="current-temperature" id="temperature"></span>
+              <h2 class="current-temperature" id="temperature"></h2>
               <span class="temp-units">°C</span>
             </div>
           </div>
@@ -85,13 +85,13 @@
 
         <div class="wind-humidity">
           
-          <p class="humidity">
+          <h6 class="humidity">
             <strong>Humidity: </strong><span id="humidity"></span>%
-          </p>
-          <p class="wind"><strong>Wind: </strong><span id="wind"></span>m/h</p>
+          </h6>
+          <h6 class="wind"><strong>Wind: </strong><span id="wind"></span>m/h</h6>
         </div>
 
-        <div class="currentDate" id="date"></div>
+        <div class="time"><h4 class="currentDate" id="date"></h4></div>
       </div>
 
       <footer>

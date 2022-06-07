@@ -131,7 +131,7 @@ h1 {
 
 .weather-forecast-days {
   position: absolute;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .temp-max {
@@ -176,7 +176,7 @@ h1 {
   position: absolute;
   font-weight: 600;
   font-size: 40px;
-  margin-top: 250px;
+  margin-top: -44px;
   margin-left: 30px;
 }
 
