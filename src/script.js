@@ -24,7 +24,7 @@ function formatDate(date) {
   let day = days[now.getDay()];
   let h2 = document.querySelector("#week-day");
   if (day.length >= 7) {
-    h2.style.fontSize = "24px";
+    h2.style.fontSize = "22px";
   }
   h2.innerHTML = `${day}`;
   return `${hours}:${minutes}`;
@@ -116,6 +116,7 @@ function showTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
   document.querySelector("#current-weather-discription").innerHTML =
     response.data.weather[0].main;
 
